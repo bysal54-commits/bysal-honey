@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bysal Honey | 100% Pure, Raw & Organic Natural Honey</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        amber: {
+                            50: '#fffbe3',
+                            100: '#fef3c7',
+                            200: '#fde68a',
+                            300: '#fcd34d',
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                            700: '#b45309',
+                            800: '#92400e',
+                            900: '#78350f',
+                            950: '#451a03',
+                        },
+                        honeyGold: '#E6A100',
+                        warmCream: '#FFFDF5'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        .honey-gradient {
+            background: linear-gradient(135deg, #FFFBEB 0%, #FEF3C7 50%, #FDE68A 100%);
+        }
+        .hero-pattern {
+            background-color: #78350f;
+            background-image: radial-gradient(#f59e0b 0.75px, transparent 0.75px), radial-gradient(#f59e0b 0.75px, #78350f 0.75px);
+            background-size: 30px 30px;
+            background-position: 0 0,15px 15px;
+            opacity: 0.95;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #FEF3C7;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #D97706;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="bg-warmCream text-amber-950 font-sans antialiased custom-scrollbar">
+
+    <!-- Announcement Bar -->
+    <div class="bg-amber-900 text-amber-100 text-xs sm:text-sm py-2 px-4 text-center font-medium flex items-center justify-center space-x-2">
+        <i class="fa-solid fa-bee animate-bounce text-amber-400"></i>
+        <span>Special Launch Offer: 20% OFF on all orders above ₹499! Use Code: <strong>BYSAL20</strong></span>
+    </div>
+
+    <!-- Main Navigation Header -->
+    <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-amber-200/60 shadow-sm transition-all duration-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Logo -->
+                <a href="#" class="flex items-center space-x-3 group">
+                    <div class="w-12 h-12 rounded-full bg-gradient-to-tr from-amber-500 to-amber-300 flex items-center justify-center text-amber-950 font-bold text-2xl shadow-md group-hover:scale-105 transition-transform">
+                        <i class="fa-solid fa-jar"></i>
+                    </div>
+                    <div>
+                        <span class="font-serif text-2xl sm:text-3xl font-bold tracking-tight text-amber-900 group-hover:text-amber-600 transition-colors">BYSAL</span>
+                        <span class="block text-xs uppercase tracking-widest text-amber-600 font-semibold -mt-1">Pure Organic Honey</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Menu -->
+                <nav class="hidden md:flex items-center space-x-8 font-medium text-amber-900">
+                    <a href="#home" class="hover:text-amber-600 transition-colors">Home</a>
+                    <a href="#products" class="hover:text-amber-600 transition-colors">Products</a>
+                    <a href="#process" class="hover:text-amber-600 transition-colors">Hive to Jar</a>
+                    <a href="#benefits" class="hover:text-amber-600 transition-colors">Health Benefits</a>
+                    <a href="#reviews" class="hover:text-amber-600 transition-colors">Reviews</a>
+                    <a href="#contact" class="hover:text-amber-600 transition-colors">Contact</a>
+                </nav>
+
+                <!-- Action Buttons & Cart -->
+                <div class="flex items-center space-x-4">
+                    <button id="cartBtn" onclick="toggleCart()" class="relative p-3 rounded-full bg-amber-100 text-amber-900 hover:bg-amber-200 transition-all focus:outline-none" aria-label="View Cart">
+                        <i class="fa-solid fa-basket-shopping text-xl"></i>
+                        <span id="cartCount" class="absolute -top-1 -right-1 bg-amber-600 text-white text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center border-2 border-white shadow">0</span>
+                    </button>
+
+                    <a href="#products" class="hidden sm:inline-flex items-center space-x-2 bg-amber-600 hover:bg-amber-700 text-white px-5 py-2.5 rounded-full font-semibold shadow-md hover:shadow-lg transition-all text-sm">
+                        <span>Shop Now</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+
+                    <!-- Mobile menu button -->
+                    <button onclick="toggleMobileMenu()" class="md:hidden p-2 rounded-lg text-amber-900 hover:bg-amber-100 focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-amber-50 border-b border-amber-200 px-4 pt-2 pb-6 space-y-3 font-medium">
+            <a href="#home" onclick="toggleMobileMenu()" class="block py-2 text-amber-900 hover:text-amber-600">Home</a>
+            <a href="#products" onclick="toggleMobileMenu()" class="block py-2 text-amber-900 hover:text-amber-600">Products</a>
+            <a href="#process" onclick="toggleMobileMenu()" class="block py-2 text-amber-900 hover:text-amber-600">Hive to Jar Process</a>
+            <a href="#benefits" onclick="toggleMobileMenu()" class="block py-2 text-amber-900 hover:text-amber-600">Health Benefits</a>
+            <a href="#reviews" onclick="toggleMobileMenu()" class="block py-2 text-amber-900 hover:text-amber-600">Reviews</a>
+            <a href="#contact" onclick="toggleMobileMenu()" class="block py-2 text-amber-900 hover:text-amber-600">Contact Us</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative overflow-hidden bg-gradient-to-b from-amber-50 via-amber-100/50 to-warmCream py-16 sm:py-24 lg:py-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+                
+                <!-- Hero Left Content -->
+                <div class="space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center space-x-2 bg-amber-200/80 px-4 py-1.5 rounded-full text-amber-900 font-medium text-xs sm:text-sm border border-amber-300">
+                        <i class="fa-solid fa-shield-halved text-amber-600"></i>
+                        <span>100% Raw, Unfiltered & Lab Certified</span>
+                    </div>
+
+                    <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-amber-950 leading-tight">
+                        Taste the Pure Goodness of <span class="text-amber-600 underline decoration-amber-300 decoration-wavy">Nature’s Nectar</span>
+                    </h1>
+
+                    <p class="text-amber-800/90 text-base sm:text-lg max-w-xl mx-auto lg:mx-0 leading-relaxed">
+                        Hand-harvested with care from pristine wild forests. Bysal Honey delivers unfiltered, nutrient-rich honey packed with natural enzymes, antioxidants, and pure floral sweetness straight to your doorstep.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="#products" class="w-full sm:w-auto text-center bg-amber-600 hover:bg-amber-700 text-white font-semibold px-8 py-4 rounded-xl shadow-lg hover:shadow-amber-500/25 transition-all text-base transform hover:-translate-y-0.5">
+                            Explore Honey Varieties
+                        </a>
+                        <a href="#process" class="w-full sm:w-auto text-center border-2 border-amber-800/30 hover:border-amber-800 text-amber-900 hover:bg-amber-100/50 font-semibold px-8 py-4 rounded-xl transition-all text-base">
+                            Our Story & Process
+                        </a>
+                    </div>
+
+                    <!-- Trust Indicators -->
+                    <div class="pt-8 border-t border-amber-200/80 grid grid-cols-3 gap-4 text-center">
+                        <div>
+                            <span class="block text-2xl sm:text-3xl font-bold text-amber-900">100%</span>
+                            <span class="text-xs sm:text-sm text-amber-700 font-medium">Pure & Unpasteurized</span>
+                        </div>
+                        <div>
+                            <span class="block text-2xl sm:text-3xl font-bold text-amber-900">5,000+</span>
+                            <span class="text-xs sm:text-sm text-amber-700 font-medium">Happy Customers</span>
+                        </div>
+                        <div>
+                            <span class="block text-2xl sm:text-3xl font-bold text-amber-900">4.9 ★</span>
+                            <span class="text-xs sm:text-sm text-amber-700 font-medium">Average Rating</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Right Image Showcase -->
+                <div class="relative flex justify-center">
+                    <!-- Decorative Golden Circle Behind Image -->
+                    <div class="absolute w-72 h-72 sm:w-96 sm:h-96 rounded-full bg-gradient-to-tr from-amber-400 to-amber-200 blur-2xl opacity-50 -z-10 animate-pulse"></div>
+                    
+                    <div class="relative bg-white/60 p-4 sm:p-6 rounded-3xl shadow-2xl border border-amber-200/80 max-w-md w-full backdrop-blur-sm">
+                        <div class="relative rounded-2xl overflow-hidden aspect-square shadow-md">
+                            <img src="https://images.unsplash.com/photo-1587049352846-4a222e784d38?auto=format&fit=crop&q=80&w=800" 
+                                 alt="Bysal Pure Honey Jar" 
+                                 class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500"
+                                 onerror="this.src='https://placehold.co/600x600/f59e0b/ffffff?text=Bysal+Honey+Jar'">
+                            
+                            <div class="absolute top-4 right-4 bg-amber-500 text-amber-950 font-bold px-3 py-1 rounded-full text-xs shadow-md">
+                                Fresh Batch
+                            </div>
+                        </div>
+
+                        <!-- Floating Badge -->
+                        <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-2xl shadow-xl border border-amber-100 hidden sm:flex items-center space-x-3">
+                            <div class="w-10 h-10 rounded-full bg-green-100 text-green-600 flex items-center justify-center font-bold text-lg">
+                                <i class="fa-solid fa-leaf"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xs font-bold text-gray-800">No Added Sugar</h4>
+                                <p class="text-[10px] text-gray-500">Zero Chemicals & Preservatives</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature Highlights Banner -->
+    <section class="bg-amber-900 text-amber-100 py-8 border-y border-amber-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                <div class="flex flex-col items-center space-y-2 p-3">
+                    <div class="w-12 h-12 rounded-full bg-amber-800 flex items-center justify-center text-amber-400 text-xl">
+                        <i class="fa-solid fa-mountain"></i>
+                    </div>
+                    <h3 class="font-bold text-sm sm:text-base">Wild Forest Harvested</h3>
+                    <p class="text-xs text-amber-200/80">Sourced directly from native flora</p>
+                </div>
+
+                <div class="flex flex-col items-center space-y-2 p-3">
+                    <div class="w-12 h-12 rounded-full bg-amber-800 flex items-center justify-center text-amber-400 text-xl">
+                        <i class="fa-solid fa-flask text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-sm sm:text-base">Lab Tested Purity</h3>
+                    <p class="text-xs text-amber-200/80">NMR & C3/C4 Sugar certified</p>
+                </div>
+
+                <div class="flex flex-col items-center space-y-2 p-3">
+                    <div class="w-12 h-12 rounded-full bg-amber-800 flex items-center justify-center text-amber-400 text-xl">
+                        <i class="fa-solid fa-truck-fast"></i>
+                    </div>
+                    <h3 class="font-bold text-sm sm:text-base">Fast Doorstep Delivery</h3>
+                    <p class="text-xs text-amber-200/80">Safe & eco-friendly packaging</p>
+                </div>
+
+                <div class="flex flex-col items-center space-y-2 p-3">
+                    <div class="w-12 h-12 rounded-full bg-amber-800 flex items-center justify-center text-amber-400 text-xl">
+                        <i class="fa-solid fa-heart-pulse"></i>
+                    </div>
+                    <h3 class="font-bold text-sm sm:text-base">Immunity Booster</h3>
+                    <p class="text-xs text-amber-200/80">Rich in natural antioxidants</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Showcase Section -->
+    <section id="products" class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+            <span class="text-amber-600 font-semibold text-sm uppercase tracking-wider">Our Signature Collection</span>
+            <h2 class="font-serif text-3xl sm:text-4xl font-bold text-amber-950 mt-2">Explore Bysal Pure Honey Products</h2>
+            <p class="text-amber-800/80 text-sm sm:text-base mt-3">Select from our range of unprocessed, single-origin raw honey and delicious infused artisanal jars.</p>
+            
+            <!-- Category Filter Buttons -->
+            <div class="flex flex-wrap justify-center gap-2 mt-8">
+                <button onclick="filterProducts('all')" class="filter-btn active bg-amber-600 text-white px-5 py-2 rounded-full text-sm font-medium transition-all shadow-sm">All Products</button>
+                <button onclick="filterProducts('raw')" class="filter-btn bg-amber-100 hover:bg-amber-200 text-amber-900 px-5 py-2 rounded-full text-sm font-medium transition-all">Raw & Natural</button>
+                <button onclick="filterProducts('infused')" class="filter-btn bg-amber-100 hover:bg-amber-200 text-amber-900 px-5 py-2 rounded-full text-sm font-medium transition-all">Infused Specials</button>
+                <button onclick="filterProducts('comb')" class="filter-btn bg-amber-100 hover:bg-amber-200 text-amber-900 px-5 py-2 rounded-full text-sm font-medium transition-all">Honeycomb & Comb</button>
+            </div>
+        </div>
+
+        <!-- Products Grid -->
+        <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Product cards will be dynamically injected via JS -->
+        </div>
+    </section>
+
+    <!-- From Hive to Jar Process Section -->
+    <section id="process" class="py-16 sm:py-24 bg-gradient-to-b from-amber-100/60 to-amber-50/40 border-y border-amber-200/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-amber-600 font-semibold text-sm uppercase tracking-wider">Quality Assurance</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-amber-950 mt-2">From Hive to Jar - Pure & Unadulterated</h2>
+                <p class="text-amber-800/80 text-sm sm:text-base mt-2">We follow sustainable, ethical beekeeping practices to protect bees while delivering pure honey.</p>
+            </div>
+
+            <div class="grid md:grid-cols-4 gap-8 relative">
+                <!-- Step 1 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-amber-200/80 relative text-center group hover:shadow-md transition-shadow">
+                    <div class="w-16 h-16 rounded-full bg-amber-500 text-white font-bold text-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                        01
+                    </div>
+                    <h3 class="font-bold text-lg text-amber-950 mb-2">Ethical Harvesting</h3>
+                    <p class="text-xs text-amber-800/80 leading-relaxed">Sourced from wild floral hives without harming bees or disturbing natural hive ecosystems.</p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-amber-200/80 relative text-center group hover:shadow-md transition-shadow">
+                    <div class="w-16 h-16 rounded-full bg-amber-500 text-white font-bold text-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                        02
+                    </div>
+                    <h3 class="font-bold text-lg text-amber-950 mb-2">Cold Pressed Extraction</h3>
+                    <p class="text-xs text-amber-800/80 leading-relaxed">Extracted using traditional cold extraction methods to preserve vitamins, pollen, and live enzymes.</p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-amber-200/80 relative text-center group hover:shadow-md transition-shadow">
+                    <div class="w-16 h-16 rounded-full bg-amber-500 text-white font-bold text-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                        03
+                    </div>
+                    <h3 class="font-bold text-lg text-amber-950 mb-2">Double Mesh Filtering</h3>
+                    <p class="text-xs text-amber-800/80 leading-relaxed">Gently strained through fine mesh cloth to remove wax particles while leaving pure bee pollen intact.</p>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-amber-200/80 relative text-center group hover:shadow-md transition-shadow">
+                    <div class="w-16 h-16 rounded-full bg-amber-500 text-white font-bold text-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                        04
+                    </div>
+                    <h3 class="font-bold text-lg text-amber-950 mb-2">Glass Jar Bottling</h3>
+                    <p class="text-xs text-amber-800/80 leading-relaxed">Sealed in food-grade eco glass jars to preserve taste, freshness, and organic nutritional value.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Health Benefits Section -->
+    <section id="benefits" class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <span class="text-amber-600 font-semibold text-sm uppercase tracking-wider">Natural Wellness</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-amber-950 mt-2 mb-6">Why Choose Bysal Honey Every Day?</h2>
+                
+                <div class="space-y-6">
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center flex-shrink-0 text-xl">
+                            <i class="fa-solid fa-shield-virus"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-amber-950 text-base sm:text-lg">Boosts Immunity & Energy</h3>
+                            <p class="text-xs sm:text-sm text-amber-800/80 mt-1">Rich in natural antioxidants and antibacterial properties that strengthen the body’s immune system.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center flex-shrink-0 text-xl">
+                            <i class="fa-solid fa-mug-hot"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-amber-950 text-base sm:text-lg">Soothes Throat & Cough</h3>
+                            <p class="text-xs sm:text-sm text-amber-800/80 mt-1">A natural cough suppressant and soothing agent for throat irritations when mixed with warm water or tea.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center flex-shrink-0 text-xl">
+                            <i class="fa-solid fa-weight-scale"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-amber-950 text-base sm:text-lg">Healthy Weight Management</h3>
+                            <p class="text-xs sm:text-sm text-amber-800/80 mt-1">Replaces refined sugars naturally, helping regulate metabolism and promoting healthy digestion.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center flex-shrink-0 text-xl">
+                            <i class="fa-solid fa-sparkles"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-amber-950 text-base sm:text-lg">Glow & Skincare Benefits</h3>
+                            <p class="text-xs sm:text-sm text-amber-800/80 mt-1">Acts as a natural moisturizer for glowing skin when used in face packs or ingested daily.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Image Visual -->
+            <div class="relative">
+                <div class="rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
+                    <img src="https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?auto=format&fit=crop&q=80&w=800" 
+                         alt="Pouring Fresh Faisel Honey" 
+                         class="w-full h-auto object-cover"
+                         onerror="this.src='https://placehold.co/600x600/f59e0b/ffffff?text=Honey+Drip'">
+                </div>
+                <div class="absolute -bottom-6 -right-6 bg-amber-600 text-white p-6 rounded-2xl shadow-xl max-w-xs hidden sm:block">
+                    <p class="font-serif italic text-sm">"The sweetest investment in your daily health and wellness journey."</p>
+                    <p class="text-xs font-bold mt-2 text-amber-200">— Bysal (Founder)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials / Customer Reviews -->
+    <section id="reviews" class="py-16 sm:py-24 bg-amber-100/50 border-t border-amber-200/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-amber-600 font-semibold text-sm uppercase tracking-wider">Real Customer Stories</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-amber-950 mt-2">Loved By Honey Enthusiasts</h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Review 1 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-amber-200/60 flex flex-col justify-between">
+                    <div>
+                        <div class="text-amber-500 mb-3 space-x-1">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-xs sm:text-sm text-amber-900/90 leading-relaxed italic">"You can immediately tell Faisel Honey is 100% natural. The aroma and wild floral taste are incredible compared to store-bought processed brands. Highly recommended!"</p>
+                    </div>
+                    <div class="flex items-center space-x-3 mt-6 pt-4 border-t border-amber-100">
+                        <div class="w-10 h-10 rounded-full bg-amber-200 font-bold flex items-center justify-center text-amber-900">
+                            RK
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm text-amber-950">Rajesh Kumar</h4>
+                            <p class="text-[11px] text-amber-700">Verified Buyer • Wildflower Honey</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-amber-200/60 flex flex-col justify-between">
+                    <div>
+                        <div class="text-amber-500 mb-3 space-x-1">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-xs sm:text-sm text-amber-900/90 leading-relaxed italic">"I bought the Ginger Infused Honey jar. It worked wonders for my morning throat stiffness. The packaging was glass and very secure!"</p>
+                    </div>
+                    <div class="flex items-center space-x-3 mt-6 pt-4 border-t border-amber-100">
+                        <div class="w-10 h-10 rounded-full bg-amber-200 font-bold flex items-center justify-center text-amber-900">
+                            AP
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm text-amber-950">Ananya Priya</h4>
+                            <p class="text-[11px] text-amber-700">Verified Buyer • Ginger Honey</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-amber-200/60 flex flex-col justify-between">
+                    <div>
+                        <div class="text-amber-500 mb-3 space-x-1">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-xs sm:text-sm text-amber-900/90 leading-relaxed italic">"Great project website and super delicious honey! The raw honeycomb jar was fresh and full of authentic flavor."</p>
+                    </div>
+                    <div class="flex items-center space-x-3 mt-6 pt-4 border-t border-amber-100">
+                        <div class="w-10 h-10 rounded-full bg-amber-200 font-bold flex items-center justify-center text-amber-900">
+                            KM
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm text-amber-950">Karthik M.</h4>
+                            <p class="text-[11px] text-amber-700">Verified Buyer • Raw Honeycomb</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Accordion Section -->
+    <section class="py-16 sm:py-24 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <span class="text-amber-600 font-semibold text-sm uppercase tracking-wider">Got Questions?</span>
+            <h2 class="font-serif text-3xl font-bold text-amber-950 mt-2">Frequently Asked Questions</h2>
+        </div>
+
+        <div class="space-y-4">
+            <!-- FAQ Item 1 -->
+            <div class="border border-amber-200 rounded-xl overflow-hidden bg-white">
+                <button onclick="toggleFaq(this)" class="w-full text-left p-5 font-bold text-amber-950 flex justify-between items-center focus:outline-none">
+                    <span>Is Bysal Honey 100% pure and unheated?</span>
+                    <i class="fa-solid fa-chevron-down text-amber-600 transition-transform"></i>
+                </button>
+                <div class="faq-content hidden px-5 pb-5 text-xs sm:text-sm text-amber-800/90 leading-relaxed">
+                    Yes! Bysal Honey is 100% raw, unheated, and unfiltered. It undergoes zero thermal processing to preserve all beneficial enzymes, antioxidants, and original floral pollen.
+                </div>
+            </div>
+
+            <!-- FAQ Item 2 -->
+            <div class="border border-amber-200 rounded-xl overflow-hidden bg-white">
+                <button onclick="toggleFaq(this)" class="w-full text-left p-5 font-bold text-amber-950 flex justify-between items-center focus:outline-none">
+                    <span>Why does real raw honey crystallize?</span>
+                    <i class="fa-solid fa-chevron-down text-amber-600 transition-transform"></i>
+                </button>
+                <div class="faq-content hidden px-5 pb-5 text-xs sm:text-sm text-amber-800/90 leading-relaxed">
+                    Crystallization is a natural mark of pure raw honey! Natural glucose in unheated honey binds over time. To reliquefy it, simply place your Bysal Honey jar in a warm water bath for 10-15 minutes.
+                </div>
+            </div>
+
+            <!-- FAQ Item 2 -->
+            <div class="border border-amber-200 rounded-xl overflow-hidden bg-white">
+                <button onclick="toggleFaq(this)" class="w-full text-left p-5 font-bold text-amber-950 flex justify-between items-center focus:outline-none">
+                    <span>Why does real raw honey crystallize?</span>
+                    <i class="fa-solid fa-chevron-down text-amber-600 transition-transform"></i>
+                </button>
+                <div class="faq-content hidden px-5 pb-5 text-xs sm:text-sm text-amber-800/90 leading-relaxed">
+                    Crystallization is a natural mark of pure raw honey! Natural glucose in unheated honey binds over time. To reliquefy it, simply place your Faisel Honey jar in a warm water bath for 10-15 minutes.
+                </div>
+            </div>
+
+            <!-- FAQ Item 3 -->
+            <div class="border border-amber-200 rounded-xl overflow-hidden bg-white">
+                <button onclick="toggleFaq(this)" class="w-full text-left p-5 font-bold text-amber-950 flex justify-between items-center focus:outline-none">
+                    <span>How long does delivery take?</span>
+                    <i class="fa-solid fa-chevron-down text-amber-600 transition-transform"></i>
+                </button>
+                <div class="faq-content hidden px-5 pb-5 text-xs sm:text-sm text-amber-800/90 leading-relaxed">
+                    Orders are processed within 24 hours. Delivery usually takes 2-4 business days across India depending on your location.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Order Inquiry Section -->
+    <section id="contact" class="py-16 sm:py-24 bg-amber-900 text-amber-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Contact Info -->
+                <div>
+                    <span class="text-amber-400 font-semibold text-sm uppercase tracking-wider">Get In Touch</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold mt-2 mb-6">Contact Bysal Honey</h2>
+                    <p class="text-amber-200/80 text-sm mb-8 leading-relaxed">
+                        Have questions about bulk orders, custom gifts, or inquiries? Reach out to us anytime!
+                    </p>
+
+                    <div class="space-y-4 text-sm">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-10 h-10 rounded-full bg-amber-800 flex items-center justify-center text-amber-400">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <span>Bysal Organic Apiaries, Tamil Nadu, India</span>
+                        </div>
+
+                        <div class="flex items-center space-x-4">
+                            <div class="w-10 h-10 rounded-full bg-amber-800 flex items-center justify-center text-amber-400">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <a href="tel:+916383112846" class="hover:text-amber-300 transition-colors">+91 63831 12846</a>
+                        </div>
+
+                        <div class="flex items-center space-x-4">
+                            <div class="w-10 h-10 rounded-full bg-amber-800 flex items-center justify-center text-amber-400">
+                                <i class="fa-solid fa-globe"></i>
+                            </div>
+                            <a href="https://bysalhoney.com" target="_blank" class="hover:text-amber-300 transition-colors">bysalhoney.com</a>
+                        </div>
+
+                        <div class="flex items-center space-x-4">
+                            <div class="w-10 h-10 rounded-full bg-amber-800 flex items-center justify-center text-amber-400">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <a href="mailto:support@bysalhoney.com" class="hover:text-amber-300 transition-colors">support@bysalhoney.com</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="bg-amber-950/60 p-6 sm:p-8 rounded-2xl border border-amber-800">
+                    <form id="contactForm" onsubmit="handleContactSubmit(event)" class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-semibold uppercase text-amber-200 mb-1">Your Name</label>
+                            <input type="text" required placeholder="Bysal" class="w-full px-4 py-3 rounded-lg bg-amber-900/60 border border-amber-700 text-white placeholder-amber-400/50 focus:outline-none focus:border-amber-400 text-sm">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold uppercase text-amber-200 mb-1">Email Address</label>
+                            <input type="email" required placeholder="bysal@bysalhoney.com" class="w-full px-4 py-3 rounded-lg bg-amber-900/60 border border-amber-700 text-white placeholder-amber-400/50 focus:outline-none focus:border-amber-400 text-sm">
+                        </div>
+                            <span>Faisel Organic Apiaries, Tamil Nadu, India</span>
+                        </div>
+
+                        <div class="flex items-center space-x-4">
+                            <div class="w-10 h-10 rounded-full bg-amber-800 flex items-center justify-center text-amber-400">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <span>+91 98765 43210</span>
+                        </div>
+
+                        <div class="flex items-center space-x-4">
+                            <div class="w-10 h-10 rounded-full bg-amber-800 flex items-center justify-center text-amber-400">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <span>support@faiselhoney.com</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="bg-amber-950/60 p-6 sm:p-8 rounded-2xl border border-amber-800">
+                    <form id="contactForm" onsubmit="handleContactSubmit(event)" class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-semibold uppercase text-amber-200 mb-1">Your Name</label>
+                            <input type="text" required placeholder="Faisel" class="w-full px-4 py-3 rounded-lg bg-amber-900/60 border border-amber-700 text-white placeholder-amber-400/50 focus:outline-none focus:border-amber-400 text-sm">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold uppercase text-amber-200 mb-1">Email Address</label>
+                            <input type="email" required placeholder="faisel@example.com" class="w-full px-4 py-3 rounded-lg bg-amber-900/60 border border-amber-700 text-white placeholder-amber-400/50 focus:outline-none focus:border-amber-400 text-sm">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold uppercase text-amber-200 mb-1">Message / Inquiry</label>
+                            <textarea rows="4" required placeholder="Write your message here..." class="w-full px-4 py-3 rounded-lg bg-amber-900/60 border border-amber-700 text-white placeholder-amber-400/50 focus:outline-none focus:border-amber-400 text-sm"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-amber-500 hover:bg-amber-400 text-amber-950 font-bold py-3 px-6 rounded-lg transition-colors shadow-lg text-sm">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-amber-950 text-amber-300/70 py-8 border-t border-amber-900 text-xs text-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <p>© 2026 <strong>Bysal Honey</strong> (bysalhoney.com). All rights reserved.</p>
+            <div class="flex space-x-6 text-base text-amber-400">
+                <a href="#" class="hover:text-white"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="hover:text-white"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://wa.me/916383112846" target="_blank" class="hover:text-white"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Slide-Over Drawer -->
+    <div id="cartDrawer" class="fixed inset-0 z-50 overflow-hidden hidden" aria-labelledby="slide-over-title" role="dialog" aria-modal="true">
+        <div onclick="toggleCart()" class="fixed inset-0 bg-gray-900/60 backdrop-blur-sm transition-opacity"></div>
+
+        <div class="fixed inset-y-0 right-0 max-w-full flex pl-10">
+            <div class="w-screen max-w-md bg-white shadow-2xl flex flex-col justify-between">
+                
+                <!-- Drawer Header -->
+                <div class="p-6 bg-amber-50 border-b border-amber-200 flex items-center justify-between">
+                    <h2 class="text-lg font-bold text-amber-950 flex items-center space-x-2">
+                        <i class="fa-solid fa-basket-shopping text-amber-600"></i>
+                        <span>Your Honey Basket</span>
+                    </h2>
+                    <button onclick="toggleCart()" class="text-amber-800 hover:text-amber-950 p-2">
+                        <i class="fa-solid fa-xmark text-xl"></i>
+                    </button>
+                </div>
+
+                <!-- Drawer Cart Items -->
+                <div id="cartItemsContainer" class="p-6 flex-1 overflow-y-auto space-y-4 custom-scrollbar">
+                    <!-- Dynamic cart items will appear here -->
+                </div>
+
+                <!-- Drawer Footer -->
+                <div class="p-6 bg-amber-50/80 border-t border-amber-200 space-y-4">
+                    <div class="flex justify-between font-bold text-lg text-amber-950">
+                        <span>Subtotal:</span>
+                        <span id="cartSubtotal">₹0</span>
+                    </div>
+                    <p class="text-xs text-amber-700">Taxes and shipping calculated at checkout.</p>
+                    <button onclick="openCheckoutModal()" class="w-full bg-amber-600 hover:bg-amber-700 text-white font-bold py-3.5 rounded-xl transition-all shadow-md">
+                        Proceed to Checkout
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div id="checkoutModal" class="fixed inset-0 z-50 flex items-center justify-center bg-gray-900/60 backdrop-blur-sm hidden p-4">
+        <div class="bg-white rounded-2xl max-w-lg w-full p-6 shadow-2xl space-y-6 relative border border-amber-200">
+            <button onclick="closeCheckoutModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+
+            <div class="text-center">
+                <div class="w-12 h-12 bg-amber-100 rounded-full text-amber-600 flex items-center justify-center mx-auto text-xl mb-2">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                </div>
+                <h3 class="text-xl font-bold text-amber-950">Complete Your Order</h3>
+                <p class="text-xs text-amber-700 mt-1">Official Order Checkout for Bysal Honey (bysalhoney.com)</p>
+            </div>
+
+            <form onsubmit="handleCheckout(event)" class="space-y-4 text-xs sm:text-sm">
+                <div>
+                    <label class="block font-semibold mb-1 text-gray-700">Full Name</label>
+                    <input type="text" required placeholder="Bysal" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-amber-500">
+                </div>
+                <div>
+                    <label class="block font-semibold mb-1 text-gray-700">Shipping Address</label>
+                    <input type="text" required placeholder="Street address, City, Pincode" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-amber-500">
+                </div>
+                <div>
+                    <label class="block font-semibold mb-1 text-gray-700">Payment Method</label>
+                    <select class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-amber-500 bg-white">
+                        <option>Cash on Delivery (COD)</option>
+                        <option>UPI / Google Pay / PhonePe</option>
+                        <option>Credit / Debit Card</option>
+                    </select>
+                </div>
+                <button type="submit" class="w-full bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 rounded-xl transition-all shadow-md">
+                    Place Order Now
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 bg-amber-900 text-white px-5 py-3 rounded-xl shadow-xl flex items-center space-x-3 translate-y-24 opacity-0 transition-all duration-300">
+        <i class="fa-solid fa-circle-check text-amber-400"></i>
+        <span id="toastMsg" class="text-sm font-medium">Item added to basket!</span>
+    </div>
+
+    <!-- Interactive JavaScript Logic -->
+    <script>
+        const products = [
+            {
+                id: 1,
+                name: 'Bysal Wildflower Raw Honey',
+                category: 'raw',
+                price: 349,
+                weight: '500g',
+                rating: 4.9,
+                reviews: 128,
+                image: 'https://images.unsplash.com/photo-1587049352846-4a222e784d38?auto=format&fit=crop&q=80&w=600',
+                desc: 'Unfiltered multi-floral honey harvested directly from deep forest wild blooms.'
+            },
+            {
+                id: 2,
+                name: 'Bysal Premium Sidr Honey',
+                category: 'raw',
+                price: 599,
+                weight: '500g',
+                rating: 5.0,
+                reviews: 94,
+                image: 'https://images.unsplash.com/photo-1587049352851-8d4e89133924?auto=format&fit=crop&q=80&w=600',
+                desc: 'Rare & luxurious single-origin Sidr nectar with deep aromatic notes.'
+            },
+            {
+                id: 3,
+                name: 'Bysal Ginger Infused Raw Honey',
+                category: 'infused',
+                price: 399,
+                weight: '350g',
+                rating: 4.8,
+                reviews: 76,
+                image: 'https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?auto=format&fit=crop&q=80&w=600',
+                desc: 'Pure honey slow-infused with natural organic ginger extracts. Ideal for cold remedies.'
+            },
+            {
+                id: 4,
+                name: 'Bysal Raw Organic Honeycomb',
+                category: 'comb',
+                price: 699,
+                weight: '400g Box',
+                rating: 4.9,
+                reviews: 52,
+                image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&q=80&w=600',
+                desc: '100% edible natural honeycomb jar right from the hive with chewable bee wax.'
+            },
+            {
+                id: 5,
+                name: 'Bysal Cinnamon Infused Honey',
+                category: 'infused',
+                price: 419,
+                weight: '350g',
+                rating: 4.7,
+                reviews: 41,
+                image: 'https://images.unsplash.com/photo-1587049352846-4a222e784d38?auto=format&fit=crop&q=80&w=600',
+                desc: 'Infused with organic Ceylon cinnamon bark. Perfect sweetener for tea & oats.'
+            },
+            {
+                id: 6,
+                name: 'Bysal Acacia Light Honey',
+                category: 'raw',
+                price: 449,
+                weight: '500g',
+                rating: 4.9,
+                reviews: 83,
+                image: 'https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?auto=format&fit=crop&q=80&w=600',
+                desc: 'Mildly sweet, liquid golden Acacia honey that stays liquid naturally for months.'
+            }
+        ];
+
+        let cart = [];
+
+        function renderProducts(filter = 'all') {
+            const container = document.getElementById('productGrid');
+            container.innerHTML = '';
+
+            const filtered = filter === 'all' ? products : products.filter(p => p.category === filter);
+
+            filtered.forEach(p => {
+                const card = document.createElement('div');
+                card.className = 'bg-white rounded-2xl shadow-sm border border-amber-200/70 overflow-hidden flex flex-col justify-between group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1';
+                card.innerHTML = `
+                    <div>
+                        <div class="relative overflow-hidden aspect-video bg-amber-50">
+                            <img src="${p.image}" alt="${p.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/400x250/f59e0b/ffffff?text=${encodeURIComponent(p.name)}'">
+                            <span class="absolute top-3 right-3 bg-amber-900/80 text-amber-100 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider backdrop-blur-sm">${p.weight}</span>
+                        </div>
+                        <div class="p-5">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-xs font-semibold text-amber-600 uppercase tracking-wider">${p.category}</span>
+                                <div class="flex items-center text-xs font-bold text-amber-700 space-x-1">
+                                    <i class="fa-solid fa-star text-amber-500"></i>
+                                    <span>${p.rating} (${p.reviews})</span>
+                                </div>
+                            </div>
+                            <h3 class="font-bold text-amber-950 text-base sm:text-lg group-hover:text-amber-600 transition-colors">${p.name}</h3>
+                            <p class="text-xs text-amber-800/80 mt-2 line-clamp-2">${p.desc}</p>
+                        </div>
+                    </div>
+
+                    <div class="p-5 pt-0 flex items-center justify-between border-t border-amber-100/60 mt-4">
+                        <div>
+                            <span class="text-xs text-gray-500 block">Price</span>
+                            <span class="text-xl font-bold text-amber-950">₹${p.price}</span>
+                        </div>
+                        <button onclick="addToCart(${p.id})" class="bg-amber-600 hover:bg-amber-700 text-white font-bold text-xs px-4 py-2.5 rounded-xl flex items-center space-x-2 transition-all shadow-md active:scale-95">
+                            <i class="fa-solid fa-plus"></i>
+                            <span>Add to Basket</span>
+                        </button>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        function filterProducts(cat) {
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('bg-amber-600', 'text-white', 'active');
+                btn.classList.add('bg-amber-100', 'text-amber-900');
+            });
+
+            event.target.classList.remove('bg-amber-100', 'text-amber-900');
+            event.target.classList.add('bg-amber-600', 'text-white', 'active');
+
+            renderProducts(cat);
+        }
+
+        function addToCart(id) {
+            const product = products.find(p => p.id === id);
+            const existing = cart.find(item => item.id === id);
+
+            if (existing) {
+                existing.qty++;
+            } else {
+                cart.push({ ...product, qty: 1 });
+            }
+
+            updateCartUI();
+            showToast(`Added ${product.name} to basket!`);
+        }
+
+        function updateCartUI() {
+            const countElem = document.getElementById('cartCount');
+            const container = document.getElementById('cartItemsContainer');
+            const subtotalElem = document.getElementById('cartSubtotal');
+
+            const totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
+            countElem.innerText = totalItems;
+
+            if (cart.length === 0) {
+                container.innerHTML = `
+                    <div class="text-center py-12 text-amber-800/60">
+                        <i class="fa-solid fa-basket-shopping text-4xl mb-3 text-amber-300"></i>
+                        <p class="text-sm font-medium">Your basket is currently empty.</p>
+                    </div>
+                `;
+                subtotalElem.innerText = '₹0';
+                return;
+            }
+
+            let subtotal = 0;
+            container.innerHTML = '';
+
+            cart.forEach(item => {
+                subtotal += item.price * item.qty;
+                const div = document.createElement('div');
+                div.className = 'flex items-center space-x-4 p-3 bg-amber-50/60 rounded-xl border border-amber-200/60';
+                div.innerHTML = `
+                    <img src="${item.image}" alt="${item.name}" class="w-14 h-14 object-cover rounded-lg">
+                    <div class="flex-1 min-w-0">
+                        <h4 class="text-xs font-bold text-amber-950 truncate">${item.name}</h4>
+                        <p class="text-xs text-amber-700 font-semibold">₹${item.price}</p>
+                        <div class="flex items-center space-x-2 mt-2">
+                            <button onclick="changeQty(${item.id}, -1)" class="w-6 h-6 rounded bg-amber-200 text-amber-900 font-bold text-xs flex items-center justify-center">-</button>
+                            <span class="text-xs font-bold text-amber-950">${item.qty}</span>
+                            <button onclick="changeQty(${item.id}, 1)" class="w-6 h-6 rounded bg-amber-200 text-amber-900 font-bold text-xs flex items-center justify-center">+</button>
+                        </div>
+                    </div>
+                    <button onclick="removeFromCart(${item.id})" class="text-red-500 hover:text-red-700 p-1 text-sm">
+                        <i class="fa-solid fa-trash-can"></i>
+                    </button>
+                `;
+                container.appendChild(div);
+            });
+
+            subtotalElem.innerText = `₹${subtotal}`;
+        }
+
+        function changeQty(id, delta) {
+            const item = cart.find(i => i.id === id);
+            if (!item) return;
+
+            item.qty += delta;
+            if (item.qty <= 0) {
+                cart = cart.filter(i => i.id !== id);
+            }
+            updateCartUI();
+        }
+
+        function removeFromCart(id) {
+            cart = cart.filter(i => i.id !== id);
+            updateCartUI();
+        }
+
+        function toggleCart() {
+            const drawer = document.getElementById('cartDrawer');
+            drawer.classList.toggle('hidden');
+        }
+
+        function openCheckoutModal() {
+            if (cart.length === 0) {
+                showToast('Please add products to cart before checkout.');
+                return;
+            }
+            toggleCart();
+            document.getElementById('checkoutModal').classList.remove('hidden');
+        }
+
+        function closeCheckoutModal() {
+            document.getElementById('checkoutModal').classList.add('hidden');
+        }
+
+        function handleCheckout(e) {
+            e.preventDefault();
+            closeCheckoutModal();
+            cart = [];
+            updateCartUI();
+            showToast('Order Placed Successfully! Thank you for ordering Bysal Honey.');
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        function toggleFaq(btn) {
+            const content = btn.nextElementSibling;
+            const icon = btn.querySelector('i');
+            content.classList.toggle('hidden');
+            icon.classList.toggle('rotate-180');
+        }
+
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toastMsg').innerText = msg;
+            toast.classList.remove('translate-y-24', 'opacity-0');
+            setTimeout(() => {
+                toast.classList.add('translate-y-24', 'opacity-0');
+            }, 3000);
+        }
+
+        function handleContactSubmit(e) {
+            e.preventDefault();
+            showToast('Thank you! Your message has been sent to Bysal Honey.');
+            e.target.reset();
+        }
+
+        // Initialize page content on DOM load
+        window.onload = function() {
+            renderProducts();
+            updateCartUI();
+        };
+    </script>
+</body>
+</html>
